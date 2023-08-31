@@ -1,2 +1,2 @@
 #!/bin/bash
-su chmod 731 hello
+chmod 731 /./hello

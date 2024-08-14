@@ -1,0 +1,41 @@
+me": "CPU is very high on Makume",
+	"type": "query alert",
+	"query": "avg(last_5m):avg:system.load.1{*} >= 50",
+	"message": "To fix this restart the host and refresh the monitor",
+	"tags": [
+		"",
+		"hot"
+	],
+	"options": {
+		"thresholds": {
+			"critical": 50,
+			"warning": 8
+		},
+		"notify_audit": true,
+		"include_tags": false,
+		"notify_no_data": true,
+		"no_data_timeframe": 10,
+		"renotify_interval": 30,
+		"renotify_statuses": [
+			"alert",
+			"no data",
+			"warn"
+		],
+		"escalation_message": "CPU is still high, repair ASAP",
+		"renotify_occurrences": 10
+	},
+	"priority": 1,
+	"restricted_roles": null,
+	"restriction_policy": {
+		"bindings": [
+			{
+				"principals": [
+					"org:ed551a8f-5a5f-11ef-a2a4-82c25d745d26",
+					"role:ed72c0d4-5a5f-11ef-b667-da7ad0900002",
+					"role:ed6940b8-5a5f-11ef-9cc8-da7ad0900002"
+				],
+				"relation": "editor"
+			}
+		]
+	}
+}
